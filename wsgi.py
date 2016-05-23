@@ -15,14 +15,14 @@ from parsing_utils import search
 web.config.debug = True
 urls = (
         '/', 'index',
-        '/json/(.*)', 'json'
+        '/cite/(.*)', 'cite'
 )
 
 class index:
     def GET(self):
         return 'Welcome to my web site!'
 
-class json:
+class cite:
     def GET(self, phrase):
         web.header('Content-Type', 'application/json')
         return json.dumps(search(phrase))
