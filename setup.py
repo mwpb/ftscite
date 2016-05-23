@@ -5,6 +5,6 @@ setup(name='ftscite',
       description='BibTeX citation server',
       author='Matthew Burke',
       author_email='',
-      url='http://ftscite-mwpb.rhcloud.com'
+      url='http://ftscite-mwpb.rhcloud.com',
       install_requires=['web.py>=0.36'],
      )
