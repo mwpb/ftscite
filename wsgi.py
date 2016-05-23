@@ -20,7 +20,7 @@ urls = (
 
 class index:
     def GET(self):
-        return 'Welcome to my web site!'
+        return 'Welcome to the Full Text Search bibTeX Citation Server'
 
 class cite:
     def GET(self, phrase):
