@@ -13,14 +13,14 @@ import web
 
 urls = (
         '/', 'index',
-        '/hello/(.*)', 'hello'
+        '/json/(.*)', 'json'
 )
 
 class index:
     def GET(self):
         return 'Welcome to my web site!'
 
-class hello:
+class json:
     def GET(self, name):
         if not name:
             name = 'World'
