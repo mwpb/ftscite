@@ -12,7 +12,7 @@ except IOError:
 import web
 import json
 from parsing_utils import search
-
+web.config.debug = True
 urls = (
         '/', 'index',
         '/json/(.*)', 'json'
