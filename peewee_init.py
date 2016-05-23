@@ -4,7 +4,7 @@ from os.path import expanduser
 import os
 import errno
 
-dbFolder = '${OPENSHIFT_DATA_DIR}/ftscite/'
+dbFolder = os.environ.get('OPENSHIFT_DATA_DIR')
 
 try: 
     os.makedirs(dbFolder)
