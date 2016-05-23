@@ -10,6 +10,7 @@ except IOError:
     pass
 
 import web
+from parsing_utils import search
 
 urls = (
         '/', 'index',
@@ -21,10 +22,9 @@ class index:
         return 'Welcome to my web site!'
 
 class json:
-    def GET(self, name):
-        if not name:
-            name = 'World'
-        return 'Hello, ' + name + '!'
+    def GET(self, phrase):
+        web.header('Content-Type', 'application/json')
+        return json.dumps(search(phrase))
 
 application = web.application(urls, globals()).wsgifunc()
 
