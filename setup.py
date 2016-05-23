@@ -1,10 +1,10 @@
 from setuptools import setup
 
-setup(name='YourAppName',
-      version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
-      url='http://www.python.org/sigs/distutils-sig/',
-#      install_requires=['Django>=1.3'],
+setup(name='ftscite',
+      version='0.1',
+      description='BibTeX citation server',
+      author='Matthew Burke',
+      author_email='',
+      url='http://ftscite-mwpb.rhcloud.com'
+      install_requires=['web.py>=0.36'],
      )
