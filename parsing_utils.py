@@ -51,7 +51,7 @@ def search(phrase):
         for row_dict in query:
             partial_results.append(row_dict)
         search_results.append(partial_results)
-    return set.intersection(*map(set,search_results))
+    return search_results
 
 def search_unknown(tex_file,bib_file):
     search_results = []
