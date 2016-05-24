@@ -46,7 +46,7 @@ def search(phrase):
     phrase_list = phrase.split(' ')
     search_results = []
     for term in phrase_list:
-        query = (Entry.select(Entry).join(EntryIndex,on=(Entry.id == EntryIndex.docid)).where(EntryIndex.content.contains(phrase)).dicts())
+        query = (Entry.select(Entry).join(EntryIndex,on=(Entry.id == EntryIndex.docid)).where(EntryIndex.content.contains(term)).dicts())
         partial_results = []
         for row_dict in query:
             partial_results.append(row_dict)
