@@ -24,7 +24,8 @@ class index:
 
 class cite:
     def GET(self, phrase):
-        web.header('Content-Type', 'application/json')
+        phrase = phrase.replace(' ','%20')
+        web.header('Content-Type','application/json')
         return json.dumps(search(phrase),indent=4)
 
 application = web.application(urls, globals()).wsgifunc()
