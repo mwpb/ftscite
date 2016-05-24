@@ -43,7 +43,7 @@ def extract_entries(bib_path):
     return bib_db.entries
 
 def search(phrase):
-    query = (Entry.select(Entry).join(EntryIndex,on=(Entry.id == EntryIndex.docid)).where(EntryIndex.match(phrase)).dicts())
+    query = (Entry.select(Entry).join(EntryIndex,on=(Entry.id == EntryIndex.docid)).where(EntryIndex.content.contains(phrase)).dicts())
     search_results = []
     for row_dict in query:
         search_results.append(row_dict)
