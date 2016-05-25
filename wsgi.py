@@ -25,6 +25,7 @@ class index:
 class cite:
     def GET(self, phrase):
         phrase = phrase.replace(' ','% AND %')
+        phrase = '%'+phrase+'%'
         web.header('Content-Type','application/json')
         return phrase+'\n'+json.dumps(search(phrase),indent=4)
 
