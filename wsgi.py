@@ -27,7 +27,7 @@ class cite:
         phrase = phrase.replace(' ','% AND %')
         phrase = '%'+phrase+'%'
         web.header('Content-Type','application/json')
-        return phrase+'\n'+json.dumps(search(phrase),indent=4)
+        return json.dumps(search(phrase),indent=4)
 
 application = web.application(urls, globals()).wsgifunc()
 
