@@ -45,13 +45,10 @@ def extract_entries(bib_path):
 def search(phrase):
     phrase_list = phrase.split(' ')
     search_results = []
-    for term in phrase_list:
-        query = (Entry.select(Entry).join(EntryIndex,on=(Entry.id == EntryIndex.docid)).where(EntryIndex.content.contains(term)).dicts())
-        partial_results = []
-        for row_dict in query:
-            partial_results.append(row_dict)
-        search_results.append(partial_results)
-    return list(set.intersection(*map(set, search_results)))
+    query = (Entry.select(Entry).join(EntryIndex,on=(Entry.id == EntryIndex.docid)).where(EntryIndex.content.contains(term)).dicts())
+    for row_dict in query:
+        search_results.append(row_dict)
+    return search_results
 
 def search_unknown(tex_file,bib_file):
     search_results = []
