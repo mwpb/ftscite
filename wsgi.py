@@ -12,7 +12,7 @@ except IOError:
 import web
 import json
 from parsing_utils import search
-render = web.template.render('OPENSHIFT_REPO_DIR/templates')
+render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates')
 web.config.debug = True
 urls = (
         '/', 'index',
@@ -21,7 +21,7 @@ urls = (
 
 class index:
     def GET(self):
-        return render.index
+        return render.index()
 
 class cite:
     def GET(self, phrase):
