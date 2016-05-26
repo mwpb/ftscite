@@ -5,7 +5,7 @@ import sqlite3
 import bibtexparser
 from sys import argv
 
-field_list = ['address','annote','author','booktitle','chapter','edition','editor','howpublished','institution','journal','month','note','number','organisation','startpage','endpage','publisher','school','series','title','ENTRYTYPE','volume','year']
+field_list = ['idstr','address','annote','author','booktitle','chapter','edition','editor','howpublished','institution','journal','month','note','number','organisation','startpage','endpage','publisher','school','series','title','ENTRYTYPE','volume','year']
 
 def tex_citations(file_path):
     tex_file = open(file_path).read()
@@ -33,6 +33,7 @@ def extract_entries(bib_path):
         for field in field_list:
             if field not in entry.keys():
                 entry[field] = None
+            entry['idstr'] = str(entry['year'])+entry['author']+str(entry['id'])
         entry_content = ' '.join([x for x in entry.values() if x != None])
         try:
             Entry.create(**entry)

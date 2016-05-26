@@ -20,7 +20,8 @@ dbPath = dbFolder + 'bibDatabase.sqlite'
 db = SqliteExtDatabase(dbPath)
 
 class Entry(Model):
-    title = CharField(unique=True)
+    title = CharField()
+    idstr = CharField(unique=True)
     address= CharField(null=True)
     annote= CharField(null=True)
     author= CharField()
