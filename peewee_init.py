@@ -4,7 +4,10 @@ from os.path import expanduser
 import os
 import errno
 
-dbFolder = os.environ.get('OPENSHIFT_DATA_DIR')
+if os.environ.get('OPENSHIFT_DATA_DIR'):
+    dbFolder = os.environ.get('OPENSHIFT_DATA_DIR')
+else:
+    dbFolder = expanduser('~')+'/.config/ftscite/'
 
 try: 
     os.makedirs(dbFolder)
