@@ -33,7 +33,7 @@ def extract_entries(bib_path):
         for field in field_list:
             if field not in entry.keys():
                 entry[field] = None
-            entry['idstr'] = str(entry['year'])+entry['author']
+        entry['idstr'] = str(entry['year'])+entry['author']
         entry_content = ' '.join([x for x in entry.values() if x != None])
         try:
             Entry.create(**entry)
