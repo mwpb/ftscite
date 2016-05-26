@@ -12,6 +12,7 @@ except IOError:
 import web
 import json
 from parsing_utils import search
+render = web.template.render('templates/')
 web.config.debug = True
 urls = (
         '/', 'index',
@@ -20,7 +21,7 @@ urls = (
 
 class index:
     def GET(self):
-        return 'Welcome to the Full Text Search bibTeX Citation Server'
+        return render.index()
 
 class cite:
     def GET(self, phrase):
