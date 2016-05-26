@@ -40,7 +40,7 @@ def extract_entries(bib_path):
             entry = Entry.create(**entry)
             entry_id = Entry.select().order_by(Entry.id.desc()).get().id
             print 'entry id:', entry_id
-            Entry.update(idstr=Entry.idstr+str(entry_id)).where(Entry.id == entry_id).execute()
+            Entry.update(idstr=entry['idstr']+str(entry_id)).where(Entry.id == entry_id).execute()
             EntryIndex.create(content = entry_content)
         except:
             print 'duplicate'
