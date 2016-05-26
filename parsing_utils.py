@@ -37,7 +37,7 @@ def extract_entries(bib_path):
         entry['idstr'] = str(entry['year'])+author
         entry_content = ' '.join([x for x in entry.values() if x != None])
         try:
-            entry = Entry.create(**entry)
+            Entry.create(**entry)
             entry_id = Entry.select().order_by(Entry.id.desc()).get().id
             print 'entry id:', entry_id
             Entry.update(idstr=entry['idstr']+str(entry_id)).where(Entry.id == entry_id).execute()
