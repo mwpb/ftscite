@@ -33,13 +33,15 @@ def extract_entries(bib_path):
         for field in field_list:
             if field not in entry.keys():
                 entry[field] = None
-            entry['idstr'] = str(entry['year'])+entry['author']+str(entry['id'])
+            entry['idstr'] = str(entry['year'])+entry['author']
         entry_content = ' '.join([x for x in entry.values() if x != None])
         try:
             Entry.create(**entry)
             EntryIndex.create(content = entry_content)
         except:
             print 'duplicate'
+        entry_id = Entry.select().order_by(Entry.id.desc()).get()
+        Entry.update(idstr=idstr+entry_id).where(Entry.id == entry_id)
     #Entry.insert_many(bib_db.entries).on_conflict('REPLACE').execute()
     return bib_db.entries
 
