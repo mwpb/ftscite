@@ -37,12 +37,13 @@ def extract_entries(bib_path):
         entry['idstr'] = str(entry['year'])+author
         entry_content = ' '.join([x for x in entry.values() if x != None])
         try:
-            Entry.create(**entry)
+            entry = Entry.create(**entry)
+            entry.id 
             EntryIndex.create(content = entry_content)
         except:
             print 'duplicate'
         entry_id = Entry.select().order_by(Entry.id.desc()).get().id
-        Entry.update(idstr=Entry.idstr+str(entry_id)).where(Entry.id == entry_id)
+        Entry.update(idstr=Entry.idstr+'hi').where(Entry.id == entry_id)
     #Entry.insert_many(bib_db.entries).on_conflict('REPLACE').execute()
     return bib_db.entries
 
