@@ -21,7 +21,7 @@ urls = (
 
 class index:
     def GET(self):
-        return render.index()
+        return render.index
 
 class cite:
     def GET(self, phrase):
