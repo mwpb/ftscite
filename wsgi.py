@@ -12,7 +12,7 @@ except IOError:
 import web
 import json
 from parsing_utils import search
-render = web.template.render('templates/')
+render = web.template.render('OPENSHIFT_REPO_DIR/templates')
 web.config.debug = True
 urls = (
         '/', 'index',
