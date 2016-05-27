@@ -30,7 +30,7 @@ class index:
     def GET(self):
         search_term = web.input()
         form = search_form()
-        return render.index(form,search_term)
+        return render.index(form,search_term.name)
 
 class cite:
     def GET(self, phrase):
