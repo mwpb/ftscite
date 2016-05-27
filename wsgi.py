@@ -23,7 +23,7 @@ urls = (
 search_form = form.Form(
         form.Textbox('name',description='Name'),
         form.Textbox('surname',description='Surname'),
-        form.Button('Search')
+        form.Button('Search',value=True)
         )
 
 class index:
