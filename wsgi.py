@@ -21,7 +21,7 @@ urls = (
 )
 
 search_form = form.Form(
-        form.Textbox('search_term'),
+        form.Textbox('Please Enter Search Term:'),
         )
 
 class index:
