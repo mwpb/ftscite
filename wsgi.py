@@ -28,9 +28,8 @@ search_form = form.Form(
 class index:
     def GET(self):
         search_results = []
-        try:
-            search_term = web.input().phrase
-            search_results = search(search_term)
+        search_term = web.input().phrase
+        search_results = search(search_term)
         bibstr = ''
         if list:
             for result in search_results:
