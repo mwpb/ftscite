@@ -1,4 +1,4 @@
-$def with (form)
+$def with (form,search_term)
 <!DOCTYPE html>
 <html lang='en-GB'>
 <head>
@@ -6,6 +6,7 @@ $def with (form)
     <title>FTSCite: Full Text BibTeX Search</title>
 </head>
 <body>
+    $:search_term
     <h1>Welcome to the Full Text BibTeX Search Server</h1>
     <form>
         $:form.render()
