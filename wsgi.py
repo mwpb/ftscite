@@ -29,8 +29,9 @@ class index:
     def GET(self):
         search_term = web.input().phrase
         search_results = search(search_term)
+        bibstr = dict2bibstr(search_results)
         form = search_form()
-        return render.index(form,search_results)
+        return render.index(form,bibstr)
 
 class cite:
     def GET(self, phrase):
