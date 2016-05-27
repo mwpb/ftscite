@@ -20,14 +20,10 @@ urls = (
         '/cite/(.*)', 'cite'
 )
 
-search_form = form.Form(
-        form.Textbox('search',value='search')
-        )
-
 class index:
     def GET(self):
-        form = search_form()
-        return render.index(form)
+        search_box = form.Textbox('search',description='Search term:')
+        return render.index(search_box)
 
 class cite:
     def GET(self, phrase):
