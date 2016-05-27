@@ -6,9 +6,7 @@ $def with (form,search_results)
     <title>FTSCite: Full Text BibTeX Search</title>
 </head>
 <body>
-    $code:
-        for result in search_results:
-            print search_results
+    $search_results
     <h1>Welcome to the Full Text BibTeX Search Server</h1>
     <form>
         $:form.render()
