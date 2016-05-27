@@ -12,7 +12,7 @@ except IOError:
 import web
 from web import form
 import json
-from parsing_utils import search
+from parsing_utils import *
 render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates')
 web.config.debug = True
 urls = (
@@ -21,16 +21,16 @@ urls = (
 )
 
 search_form = form.Form(
-        form.Textbox('name',description='Name'),
-        form.Textbox('surname',description='Surname'),
+        form.Textbox('phrase',description='Search term:'),
         form.Button('Search',value=True)
         )
 
 class index:
     def GET(self):
-        search_term = web.input()
+        search_term = web.input().phrase
+        search_results = search(phrase)
         form = search_form()
-        return render.index(form,search_term.name)
+        return render.index(form,search_results)
 
 class cite:
     def GET(self, phrase):
