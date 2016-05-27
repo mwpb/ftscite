@@ -32,8 +32,9 @@ class index:
             search_term = web.input().phrase
             search_results = search(search_term)
         bibstr = ''
-        for result in search_results:
-            bibstr = bibstr+dict2bibstr(search_results)+'\n\n'
+        if list:
+            for result in search_results:
+                bibstr = bibstr+dict2bibstr(search_results)+'\n\n'
         form = search_form()
         return render.index(form,bibstr)
 
