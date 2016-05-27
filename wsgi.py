@@ -28,7 +28,7 @@ search_form = form.Form(
 class index:
     def GET(self):
         search_term = web.input().phrase
-        search_results = search(phrase)
+        search_results = search(search_term)
         form = search_form()
         return render.index(form,search_results)
 
