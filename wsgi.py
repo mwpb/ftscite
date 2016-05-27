@@ -27,9 +27,13 @@ search_form = form.Form(
 
 class index:
     def GET(self):
-        search_term = web.input().phrase
-        search_results = search(search_term)
-        bibstr = dict2bibstr(search_results)
+        search_results = []
+        try:
+            search_term = web.input().phrase
+            search_results = search(search_term)
+        bibstr = ''
+        for result in search_results:
+            bibstr = bibstr+dict2bibstr(search_results)+'\n\n'
         form = search_form()
         return render.index(form,bibstr)
 
