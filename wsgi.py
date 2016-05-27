@@ -33,7 +33,7 @@ class index:
         bibstr = ''
         if list:
             for result in search_results:
-                bibstr = bibstr+dict2bibstr(search_results)+'\n\n'
+                bibstr = bibstr+dict2bibstr(result)+'\n\n'
         form = search_form()
         return render.index(form,bibstr)
 
