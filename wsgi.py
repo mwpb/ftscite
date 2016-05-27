@@ -26,15 +26,17 @@ urls = (
 )
 
 search_form = form.Form(
-        form.Textbox('phrase',description='Search term:'),
+        form.Textbox('phrase',description='Search term:',autofocus='autofocus'),
         form.Button('Search',value=True)
         )
 
 class index:
     def GET(self):
         search_results = []
+        form = search_form()
         try:
             search_term = web.input().phrase
+            form.fill({'phrase':search_term})
             search_term = search_term.replace(' ','* AND *')
             search_term = '*'+search_term+'*'
             search_results = search(search_term)
@@ -43,7 +45,6 @@ class index:
         results_str = ''
         for result in search_results:
             results_str = results_str +dict2bibstr(result)+'\n\n'
-        form = search_form()
         return render.index(form,results_str)
 
 class cite:
