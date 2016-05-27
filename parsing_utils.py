@@ -35,12 +35,13 @@ def extract_entries(bib_path):
                 entry[field] = None
         author = ''.join(x for x in entry['author'] if x.isalnum())
         entry['idstr'] = str(entry['year'])+author
-        entry_content = ' '.join([x for x in entry.values() if x != None])
         try:
             Entry.create(**entry)
             entry_id = Entry.select().order_by(Entry.id.desc()).get().id
             print 'entry id:', entry_id
-            Entry.update(idstr=entry['idstr']+str(entry_id)).where(Entry.id == entry_id).execute()
+            entry['idstr'] = entry['idstr']+str(entry_id)
+            entry_content = ' '.join([x for x in entry.values() if x != None])
+            Entry.update(idstr=entry['idstr']).where(Entry.id == entry_id).execute()
             EntryIndex.create(content = entry_content)
         except:
             print 'duplicate'
@@ -54,7 +55,13 @@ def search(phrase):
         search_results.append(row_dict)
     return search_results
 
-def search_unknown(tex_file,bib_file):
+def prep_phrase(phrase):
+    phrase = phrase.replace(' ','* AND *')
+    phrase = '*'+phrase+'*'
+    return phrase
+
+
+def search_unknown(tex_path,bib_path):
     search_results = []
     for entry in unknown_entries(tex_path,bib_path):
         result = search(entry)
@@ -64,15 +71,25 @@ def search_unknown(tex_file,bib_file):
 def dict2bibstr(e):
     if e == []:
         return 'no entries to dump'
-    nick = str(e['id'])
-    nickname = ''.join(x for x in nick if x.isalnum())
-    dump_str = '@'+e['ENTRYTYPE']+'{'+nickname+',\n'
+    dump_str = '@'+e['ENTRYTYPE']+'{'+e['idstr']+',\n'
     for entry in e.keys():
         if entry != 'ENTRYTYPE':
-            if e[entry] != None:
-                dump_str = dump_str+entry+' = {'+str(e[entry])+'},\n'
+            if entry != 'idstr':
+                if e[entry] != None:
+                    dump_str = dump_str+entry+' = {'+str(e[entry])+'},\n'
     dump_str = dump_str+'}\n'
     return dump_str
+
+def update_tex(tex_path,original_search,chosen_entry_idstr):
+    for line in fileinput.FileInput(tex_path,inplace=1):
+        line = line.replace('cite{'+original_search+'}','cite{'+chosen_entry_idstr+'}')
+        print line,
+    return 'tex file updated'
+
+def update_bib(bib_path,chosen_entry):
+    with open(bib_path, "a") as myfile:
+        myfile.write(dict2bibstr(chosen_entry))
+    return 'bib file updated'
 
 def dump_entry(old_nick,e,bib_file,tex_file):
     if e == []:
