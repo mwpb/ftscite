@@ -1,4 +1,4 @@
-$def with (search_box)
+$def with (form)
 <!DOCTYPE html>
 <html lang='en-GB'>
 <head>
@@ -7,6 +7,8 @@ $def with (search_box)
 </head>
 <body>
     <h1>Welcome to the Full Text BibTeX Search Server</h1>
-    $:search_box.render()
+    <form>
+        $:form.render()
+    </form>
 </body>
 </html>
