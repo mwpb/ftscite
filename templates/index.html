@@ -1,3 +1,4 @@
+$def with (form)
 <!DOCTYPE html>
 <html lang='en-GB'>
 <head>
@@ -6,5 +7,8 @@
 </head>
 <body>
     <h1>Welcome to the Full Text BibTeX Search Server</h1>
+    <form name='search'>
+        $:form.render()
+    </form>
 </body>
 </html>

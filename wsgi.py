@@ -10,6 +10,7 @@ except IOError:
     pass
 
 import web
+from web import form
 import json
 from parsing_utils import search
 render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates')
@@ -19,9 +20,14 @@ urls = (
         '/cite/(.*)', 'cite'
 )
 
+search_form = form.Form(
+        form.Textbox('search_term'),
+        )
+
 class index:
     def GET(self):
-        return render.index()
+        form = search_form()
+        return render.index(form)
 
 class cite:
     def GET(self, phrase):
