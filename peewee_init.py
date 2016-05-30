@@ -21,7 +21,8 @@ db = SqliteExtDatabase(dbPath)
 
 class Entry(Model):
     title = CharField()
-    idstr = CharField(unique=True)
+    idstr = CharField()
+    uniquestr = CharField(unique=True)
     address= CharField(null=True)
     annote= CharField(null=True)
     author= CharField()

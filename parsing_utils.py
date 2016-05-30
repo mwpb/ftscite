@@ -23,30 +23,30 @@ def unknown_entries(tex_path,bib_path):
     diff = set(tex_citations(tex_path))-set(bib_entries(bib_path))
     return list(diff)
 
-def extract_entries(bib_path):
-    bibtex_str = open(bib_path).read()
-    bib_db = bibtexparser.loads(bibtex_str)
-    for entry in bib_db.entries:
-        for key in list(entry):
-            if key not in field_list:
-                del entry[key]
-        for field in field_list:
-            if field not in entry.keys():
-                entry[field] = None
-        author = ''.join(x for x in entry['author'] if x.isalnum())
-        entry['idstr'] = str(entry['year'])+author
-        try:
-            Entry.create(**entry)
-            entry_id = Entry.select().order_by(Entry.id.desc()).get().id
-            print 'entry id:', entry_id
-            entry['idstr'] = entry['idstr']+str(entry_id)
-            entry_content = ' '.join([x for x in entry.values() if x != None])
-            Entry.update(idstr=entry['idstr']).where(Entry.id == entry_id).execute()
-            EntryIndex.create(content = entry_content)
-        except:
-            print 'duplicate'
-            #Entry.insert_many(bib_db.entries).on_conflict('REPLACE').execute()
-    return bib_db.entries
+#def extract_entries(bib_path):
+#    bibtex_str = open(bib_path).read()
+#    bib_db = bibtexparser.loads(bibtex_str)
+#    for entry in bib_db.entries:
+#        for key in list(entry):
+#            if key not in field_list:
+#                del entry[key]
+#        for field in field_list:
+#            if field not in entry.keys():
+#                entry[field] = None
+#        author = ''.join(x for x in entry['author'] if x.isalnum())
+#        entry['idstr'] = str(entry['year'])+author
+#        try:
+#            Entry.create(**entry)
+#            entry_id = Entry.select().order_by(Entry.id.desc()).get().id
+#            print 'entry id:', entry_id
+#            entry['idstr'] = entry['idstr']+str(entry_id)
+#            entry_content = ' '.join([x for x in entry.values() if x != None])
+#            Entry.update(idstr=entry['idstr']).where(Entry.id == entry_id).execute()
+#            EntryIndex.create(content = entry_content)
+#        except:
+#            print 'duplicate'
+#            #Entry.insert_many(bib_db.entries).on_conflict('REPLACE').execute()
+#    return bib_db.entries
 
 def search(phrase):
     search_results = []

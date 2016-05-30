@@ -14,6 +14,8 @@ import web
 from web import form
 import json
 from parsing_utils import *
+from bib2dict import *
+from dict2sql import *
 if os.getenv('OPENSHIFT_DATA_DIR'):
     render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates')
 else:
@@ -22,7 +24,8 @@ else:
 
 urls = (
         '/', 'index',
-        '/cite/(.*)', 'cite'
+        '/cite/(.*)', 'cite',
+        '/upload', 'upload'
 )
 
 search_form = form.Form(
@@ -37,8 +40,8 @@ class index:
         try:
             search_term = web.input().phrase
             form.fill({'phrase':search_term})
-            search_term = search_term.replace(' ','* AND *')
-            search_term = '*'+search_term+'*'
+            #search_term = search_term.replace(' ','* AND *')
+            #search_term = '*'+search_term+'*'
             search_results = search(search_term)
         except:
             pass
@@ -54,9 +57,19 @@ class cite:
         web.header('Content-Type','application/json')
         return json.dumps(search(phrase),indent=4)
 
-#
-# Below for testing only
-#
+class upload:
+    def GET(self):
+        return render.upload('',0)
+
+    def POST(self):
+        x = web.input(myfile={})
+        web.debug(x['myfile'].filename) 
+        bibstr = x['myfile'].value
+        web.debug(x['myfile'].file.read()) 
+        bibdict = clean_bibdict(bibstr2dict(bibstr))
+        idstrs_added, duplicate_count = extract_entries(bibdict)
+        print '\n\nIdStr:',idstrs_added,'\n\n'
+        return render.upload(idstrs_added,duplicate_count)
 
 if os.getenv('OPENSHIFT_DATA_DIR'):
     application = web.application(urls, globals()).wsgifunc()

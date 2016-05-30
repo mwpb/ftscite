@@ -1,0 +1,21 @@
+$def with (idstrs_added,duplicate_count)
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <title>Upload BibTeX File</title>
+</head>
+<body>
+    <h1>Upload BibTeX File</h1>
+    <form method="POST" enctype="multipart/form-data" action="">
+        <input type="file" name="myfile" />
+        <input type="submit" />
+    </form>
+    <h2>File Contents</h2>
+    <ul>
+    $for idstr in idstrs_added:
+        <li>$idstr</li>
+    </ul>
+    Duplicates found: $duplicate_count
+</body>
+</html>

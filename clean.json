@@ -1,0 +1,1211 @@
+[
+  {
+    "author": [
+      {
+        "family": "Klingenberg",
+        "given": "Wilhelm P.A."
+      }
+    ],
+    "id": "Klingenberg1995",
+    "issued": {
+      "date-parts": [
+        [
+          1995
+        ]
+      ]
+    },
+    "publisher": "Walter de Gruyter",
+    "title": "Riemannian geometry",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hirsch",
+        "given": "Morris W."
+      }
+    ],
+    "id": "Hirsch1976",
+    "issued": {
+      "date-parts": [
+        [
+          1976
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Differential topology",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Jr.",
+        "given": "Alexander Kirillov"
+      }
+    ],
+    "id": "Kirillov2008",
+    "issued": {
+      "date-parts": [
+        [
+          2008
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "An introduction to lie groups and lie algebras",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Mackenzie",
+        "given": "Kirill C. H."
+      }
+    ],
+    "id": "Mackenzie2005",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "General theory of lie groupoids and lie algebroids",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Grandis",
+        "given": "Marco"
+      }
+    ],
+    "id": "Grandis2009",
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "Directed algebraic topology: Models of non-reversible worlds",
+    "title-short": "Directed algebraic topology",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Penon",
+        "given": "Jacques"
+      }
+    ],
+    "container-title": "Cahiers de topologie et geometrie differentielle categoriques",
+    "id": "Penon1981",
+    "issue": "1",
+    "page": "67-72",
+    "title": "Infinitesimaux et intuitionniseme",
+    "type": "article-journal",
+    "volume": "22"
+  },
+  {
+    "author": [
+      {
+        "family": "Kolar",
+        "given": "Ivan"
+      }
+    ],
+    "container-title": "Differential Geometry and its Applications",
+    "id": "Kolar2005",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "page": "305-314",
+    "title": "Functorial prolongations of lie algebroids",
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Kolar",
+        "given": "Ivan"
+      }
+    ],
+    "container-title": "Banach Center Publications",
+    "id": "Kolar2007",
+    "issued": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    },
+    "page": "177-184",
+    "title": "Functorial prolongations of lie algebroids",
+    "type": "article-journal",
+    "volume": "76"
+  },
+  {
+    "author": [
+      {
+        "family": "Makkai",
+        "given": "M."
+      },
+      {
+        "family": "Rosicky",
+        "given": "Jiri"
+      }
+    ],
+    "container-title": "Journal of Pure and Applied Algebra",
+    "id": "Makkai2014a",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "page": "1652-1664",
+    "title": "Cellular categories",
+    "type": "article-journal",
+    "volume": "218"
+  },
+  {
+    "author": [
+      {
+        "family": "M. Makkai",
+        "given": "Jiri Rosicky"
+      },
+      {
+        "family": "Vokrinek",
+        "given": "L."
+      }
+    ],
+    "container-title": "Adv. Math.",
+    "id": "Makkai2014b",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "page": "49â€“68",
+    "title": "On a fat small object argument",
+    "type": "article-journal",
+    "volume": "254"
+  },
+  {
+    "author": [
+      {
+        "family": "Joyce",
+        "given": "Dominic"
+      }
+    ],
+    "container-title": "Moduli spaces",
+    "id": "Joyce2014",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "An introduction to d-manifolds and derived differential geometry",
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Schreiber",
+        "given": "Urs"
+      }
+    ],
+    "id": "Schreiber21st",
+    "note": "Preprint, <http://arxiv.org/abs/1310.7930v1>",
+    "title": "Differential cohomology in a cohesive infinity-topos",
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Kolar",
+        "given": "Ivan"
+      }
+    ],
+    "container-title": "Handbook of global analysis",
+    "id": "Kolar2008",
+    "issued": {
+      "date-parts": [
+        [
+          2008
+        ]
+      ]
+    },
+    "publisher": "Elsevier",
+    "title": "Weil bundles as generalized jet spaces",
+    "type": "paper-conference"
+  },
+  {
+    "author": [
+      {
+        "family": "Ramazan",
+        "given": "Birant"
+      }
+    ],
+    "container-title": "Preprint arXiv:math/0001149",
+    "id": "Ramazan2000",
+    "issued": {
+      "date-parts": [
+        [
+          2000
+        ]
+      ]
+    },
+    "title": "Une formule du type baker-campbell-hausdorff pour les groupoides de lie",
+    "type": "article-journal"
+  },
+  {
+    "author": [
+      {
+        "family": "Debord",
+        "given": "Claire"
+      }
+    ],
+    "container-title": "Banach Center Publications",
+    "id": "Debord2001",
+    "page": "21-33",
+    "title": "Local integration of lie algebroids",
+    "type": "article-journal",
+    "volume": "54"
+  },
+  {
+    "author": [
+      {
+        "family": "Weinstein",
+        "given": "Alan"
+      }
+    ],
+    "container-title": "Bulletin (New Series) of the American Mathematical Society",
+    "id": "Weinstein1987",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          1987
+        ]
+      ]
+    },
+    "page": "101-104",
+    "title": "Symplectic groupoids and poisson manifolds",
+    "type": "article-journal",
+    "volume": "16"
+  },
+  {
+    "author": [
+      {
+        "family": "Grandis",
+        "given": "Marco"
+      },
+      {
+        "family": "Mauri",
+        "given": "Luca"
+      }
+    ],
+    "container-title": "Theory and Applications of Categories",
+    "id": "Grandis2003",
+    "issue": "8",
+    "issued": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "page": "185-211",
+    "title": "Cubical sets and their site",
+    "type": "article-journal",
+    "volume": "11"
+  },
+  {
+    "author": [
+      {
+        "family": "Herrlich",
+        "given": "Horst"
+      },
+      {
+        "family": "Strecker",
+        "given": "George E."
+      }
+    ],
+    "container-title": "Transactions of the American Mathematical Society",
+    "id": "Herrlich1971",
+    "issued": {
+      "date-parts": [
+        [
+          1971
+        ]
+      ]
+    },
+    "page": "205-226",
+    "title": "Coreflective subcategories",
+    "type": "article-journal",
+    "volume": "157"
+  },
+  {
+    "author": [
+      {
+        "family": "Vogler",
+        "given": "Franz"
+      }
+    ],
+    "id": "Vogler2013",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "publisher": "Logos Verlag",
+    "title": "Derived manifolds from functors of points",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Serre",
+        "given": "Jean-Pierre"
+      }
+    ],
+    "id": "Serre2006",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Lie algebras and lie groups",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Tseng",
+        "given": "Hsian-Hua"
+      },
+      {
+        "family": "Zhu",
+        "given": "Chenchang"
+      }
+    ],
+    "container-title": "Composito Mathematica",
+    "id": "Tseng2006",
+    "issue": "01",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "page": "251-270",
+    "title": "Integrating lie algebroids via stacks",
+    "type": "article-journal",
+    "volume": "142"
+  },
+  {
+    "author": [
+      {
+        "family": "Robinson",
+        "given": "Abraham"
+      }
+    ],
+    "id": "Robinson1996",
+    "issued": {
+      "date-parts": [
+        [
+          1996
+        ]
+      ]
+    },
+    "publisher": "Princeton University Press",
+    "title": "Non-standard analysis",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Weinstein",
+        "given": "Alan"
+      }
+    ],
+    "container-title": "Notices of the American Mathematical Society",
+    "id": "Weinstein1996",
+    "issue": "7",
+    "issued": {
+      "date-parts": [
+        [
+          1996
+        ]
+      ]
+    },
+    "page": "744-752",
+    "title": "Groupoids: Unifying internal and external symmetry. a tour through some examples",
+    "title-short": "Groupoids",
+    "type": "article-journal",
+    "volume": "43"
+  },
+  {
+    "author": [
+      {
+        "family": "Kolar",
+        "given": "Ivan"
+      },
+      {
+        "family": "Michor",
+        "given": "Peter W."
+      },
+      {
+        "family": "Slovak",
+        "given": "Jan"
+      }
+    ],
+    "id": "Kolar1993",
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Natural operations in differential geometry",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bruno",
+        "given": "Oscar P."
+      }
+    ],
+    "container-title": "Cahiers de topologie et géométrie différentielle catégoriques",
+    "id": "Bruno1985",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          1985
+        ]
+      ]
+    },
+    "page": "311-323",
+    "title": "Logical opens of exponential objects",
+    "type": "article-journal",
+    "volume": "26"
+  },
+  {
+    "author": [
+      {
+        "family": "Dubuc",
+        "given": "Eduardo J."
+      }
+    ],
+    "container-title": "Journal of Pure and Applied Algebra",
+    "id": "Dubuc1990",
+    "issued": {
+      "date-parts": [
+        [
+          1990
+        ]
+      ]
+    },
+    "page": "131-144",
+    "title": "Germ representability and local integration of vector fields in a well adapted model of sDG",
+    "type": "article-journal",
+    "volume": "64"
+  },
+  {
+    "author": [
+      {
+        "family": "Crainic",
+        "given": "Marius"
+      },
+      {
+        "family": "Fernandes",
+        "given": "Rui Loja"
+      }
+    ],
+    "container-title": "Annals of Mathematics",
+    "id": "Crainic2003",
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "page": "575-620",
+    "title": "Integrability of lie brackets",
+    "type": "article-journal",
+    "volume": "157"
+  },
+  {
+    "author": [
+      {
+        "family": "Lane",
+        "given": "Saunders Mac"
+      },
+      {
+        "family": "Moerdijk",
+        "given": "Ieke"
+      }
+    ],
+    "id": "MacLane1992",
+    "issued": {
+      "date-parts": [
+        [
+          1992
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Sheaves in geometry and logic",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Riehl",
+        "given": "Emily"
+      }
+    ],
+    "id": "Riehl2014",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "Categorical homotopy theory",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Cassidy",
+        "given": "C."
+      },
+      {
+        "family": "Hébert",
+        "given": "M."
+      },
+      {
+        "family": "Kelly",
+        "given": "G. M."
+      }
+    ],
+    "container-title": "Australian Mathematical Society. Journal. Series A. Pure Mathematics and Statistics",
+    "id": "Cassidy1985",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          1985
+        ]
+      ]
+    },
+    "page": "287-329",
+    "title": "Reflective subcategories, localizations and factorization systems",
+    "type": "article-journal",
+    "volume": "38"
+  },
+  {
+    "author": [
+      {
+        "family": "Lucyshyn-Wright",
+        "given": "Rory"
+      }
+    ],
+    "container-title": "Theory and Application of Categories",
+    "id": "Lucyshyn-Wright2014",
+    "issue": "18",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "page": "475-495",
+    "title": "Enriched factorisation systems",
+    "type": "article-journal",
+    "volume": "29"
+  },
+  {
+    "author": [
+      {
+        "family": "Kelly",
+        "given": "G. M."
+      }
+    ],
+    "container-title": "Bulletin of the Australian Mathematical Society",
+    "id": "Kelly1980",
+    "issued": {
+      "date-parts": [
+        [
+          1980
+        ]
+      ]
+    },
+    "page": "1-83",
+    "title": "A unified treatment of transfinite constructions for free algebras, free monoids, colimits, associated sheaves, and so on",
+    "type": "article-journal",
+    "volume": "22"
+  },
+  {
+    "author": [
+      {
+        "family": "Lie",
+        "given": "Sophus"
+      }
+    ],
+    "container-title": "Ges. Abh.",
+    "id": "Lie1891",
+    "issued": {
+      "date-parts": [
+        [
+          1891
+        ]
+      ]
+    },
+    "page": "300-330",
+    "title": "Grundlagen fur die theorie der unendlichen kontinuerlicken transformations gruppen, i",
+    "type": "article-journal",
+    "volume": "6"
+  },
+  {
+    "author": [
+      {
+        "family": "Day",
+        "given": "Brian"
+      }
+    ],
+    "container-title": "Category seminar: Proceedings sydney category theory seminar 1972/1973",
+    "id": "Day1974",
+    "issued": {
+      "date-parts": [
+        [
+          1974
+        ]
+      ]
+    },
+    "page": "1-19",
+    "publisher": "Springer-Verlag",
+    "title": "On adjoint-functor factorisation",
+    "type": "chapter"
+  },
+  {
+    "author": [
+      {
+        "family": "Bousfield",
+        "given": "A.K."
+      }
+    ],
+    "container-title": "Journal of Pure and Applied Algebra",
+    "id": "Bousfield1977",
+    "issue": "2-3",
+    "issued": {
+      "date-parts": [
+        [
+          1977
+        ]
+      ]
+    },
+    "page": "207 - 220",
+    "title": "Constructions of factorization systems in categories",
+    "type": "article-journal",
+    "volume": "9"
+  },
+  {
+    "author": [
+      {
+        "family": "Johnstone",
+        "given": "Peter T."
+      }
+    ],
+    "id": "Johnstone2014",
+    "note": "Volume 3. To appear.",
+    "title": "Sketches of an elephant: A topos theory compendium",
+    "title-short": "Sketches of an elephant",
+    "type": "manuscript"
+  },
+  {
+    "author": [
+      {
+        "family": "Johnstone",
+        "given": "Peter T."
+      }
+    ],
+    "id": "Johnstone2002",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    },
+    "publisher": "Oxford University Press",
+    "title": "Sketches of an elephant: A topos theory compendium",
+    "title-short": "Sketches of an elephant",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Kock",
+        "given": "Anders"
+      }
+    ],
+    "id": "Kock2006",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "Synthetic differential geometry",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Dubuc",
+        "given": "Eduardo J."
+      }
+    ],
+    "container-title": "Journal of Pure and Applied Algebra",
+    "id": "Dubuc1986",
+    "issued": {
+      "date-parts": [
+        [
+          1986
+        ]
+      ]
+    },
+    "page": "129-143",
+    "title": "Logical opens and real numbers in topoi",
+    "type": "article-journal",
+    "volume": "43"
+  },
+  {
+    "author": [
+      {
+        "family": "Dubuc",
+        "given": "Eduardo J."
+      }
+    ],
+    "container-title": "Cahiers de topologie et géométrie différentielle catégoriques",
+    "id": "Dubuc1979",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          1979
+        ]
+      ]
+    },
+    "page": "231-279",
+    "title": "Sur les modèles de la géométrie différentielle synthétique",
+    "type": "article-journal",
+    "volume": "20"
+  },
+  {
+    "author": [
+      {
+        "family": "Knapp",
+        "given": "Anthony W."
+      }
+    ],
+    "id": "Knapp2002",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    },
+    "publisher": "Birkhauser",
+    "title": "Lie groups beyond an introduction",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Hazewinkel",
+        "given": "Michiel"
+      }
+    ],
+    "id": "Hazewinkel1978",
+    "issued": {
+      "date-parts": [
+        [
+          1978
+        ]
+      ]
+    },
+    "publisher": "Academic Press",
+    "title": "Formal groups and applications",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Carter",
+        "given": "Roger"
+      },
+      {
+        "family": "Segal",
+        "given": "Graeme"
+      },
+      {
+        "family": "Macdonald",
+        "given": "Ian"
+      }
+    ],
+    "id": "Carter1995",
+    "issued": {
+      "date-parts": [
+        [
+          1995
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "Lectures on lie groups and lie algebras",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Kolk",
+        "given": "J. A. C."
+      },
+      {
+        "family": "Duistermaat",
+        "given": "J.J."
+      }
+    ],
+    "id": "Kolk2000",
+    "issued": {
+      "date-parts": [
+        [
+          2000
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Lie groups",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Lee",
+        "given": "John M."
+      }
+    ],
+    "id": "Lee2013",
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Introduction to smooth manifolds",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Lee",
+        "given": "John M."
+      }
+    ],
+    "id": "Lee2003",
+    "issued": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "publisher": "Springer -Verlag",
+    "title": "Introduction to smooth manifolds",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Bredon",
+        "given": "Glen E."
+      }
+    ],
+    "collection-title": "Graduate texts in mathematics",
+    "id": "Bredon2002",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Topology and geometry",
+    "type": "book",
+    "volume": "139"
+  },
+  {
+    "author": [
+      {
+        "family": "Whitney",
+        "given": "Hassler"
+      }
+    ],
+    "container-title": "Annals of Mathematics",
+    "id": "Whitney1936",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          1936
+        ]
+      ]
+    },
+    "page": "645-680",
+    "title": "Differentiable manifolds",
+    "type": "article-journal",
+    "volume": "37"
+  },
+  {
+    "author": [
+      {
+        "family": "Kock",
+        "given": "Anders"
+      },
+      {
+        "family": "Reyes",
+        "given": "Gonzalo E."
+      }
+    ],
+    "container-title": "Central European Journal of Mathematics",
+    "id": "KockReyes2006",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "page": "64-81",
+    "title": "Ordinary differential equations and their exponentials",
+    "type": "article-journal",
+    "volume": "4"
+  },
+  {
+    "author": [
+      {
+        "family": "Awodey",
+        "given": "Steve"
+      }
+    ],
+    "id": "Awodey2006",
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    },
+    "publisher": "Oxford University Press",
+    "title": "Category theory",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Kelly",
+        "given": "G. M."
+      }
+    ],
+    "id": "Kelly2005",
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "publisher": "Reprints in Theory; Applications of Categories",
+    "title": "Basic concepts of enriched category theory",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Nestruev",
+        "given": "Jet"
+      }
+    ],
+    "id": "Nestruev2003",
+    "issued": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Smooth manifolds and observables",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Borceux",
+        "given": "Francis"
+      }
+    ],
+    "id": "Borceux1994c",
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "Handbook of categorical algebra 3: Categories of sheaves",
+    "title-short": "Handbook of categorical algebra 3",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Borceux",
+        "given": "Francis"
+      }
+    ],
+    "id": "Borceux1994b",
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "Handbook of categorical algebra 2: Categories and structures",
+    "title-short": "Handbook of categorical algebra 2",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Borceux",
+        "given": "Francis"
+      }
+    ],
+    "id": "Borceux1994a",
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    },
+    "publisher": "Cambridge University Press",
+    "title": "Handbook of categorical algebra 1: Basic category theory",
+    "title-short": "Handbook of categorical algebra 1",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Johnstone",
+        "given": "P. T."
+      }
+    ],
+    "id": "Johnstone1977",
+    "issued": {
+      "date-parts": [
+        [
+          1977
+        ]
+      ]
+    },
+    "publisher": "Academic Press Inc.",
+    "title": "Topos theory",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Moerdijk",
+        "given": "Ieke"
+      },
+      {
+        "family": "Reyes",
+        "given": "Gonzalo E."
+      }
+    ],
+    "id": "Moerdijk1991",
+    "issued": {
+      "date-parts": [
+        [
+          1991
+        ]
+      ]
+    },
+    "publisher": "Springer-Verlag",
+    "title": "Models for smooth infinitesimal analysis",
+    "type": "book"
+  },
+  {
+    "author": [
+      {
+        "family": "Lawvere",
+        "given": "F. William"
+      }
+    ],
+    "id": "Lawvere1997",
+    "issued": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    },
+    "note": "Transcript from Video, Montreal",
+    "title": "Toposes of laws of motion",
+    "type": "manuscript"
+  }
+]
