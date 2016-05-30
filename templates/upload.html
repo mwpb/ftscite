@@ -11,11 +11,14 @@ $def with (idstrs_added,duplicate_count)
         <input type="file" name="myfile" />
         <input type="submit" />
     </form>
-    <h2>File Contents</h2>
+    <h2>Entries Added</h2>
+    $if idstrs_added == []:
+        No entries added.
     <ul>
     $for idstr in idstrs_added:
         <li>$idstr</li>
     </ul>
-    Duplicates found: $duplicate_count
+    <h2>Duplicates Found</h2> 
+    Duplicate count = $duplicate_count
 </body>
 </html>

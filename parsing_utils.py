@@ -71,7 +71,7 @@ def search_unknown(tex_path,bib_path):
 def dict2bibstr(e):
     if e == []:
         return 'no entries to dump'
-    dump_str = '@'+e['ENTRYTYPE']+'{'+e['idstr']+',\n'
+    dump_str = '@'+str(e['ENTRYTYPE'])+'{'+str(e['idstr'])+',\n'
     for entry in e.keys():
         if entry != 'ENTRYTYPE':
             if entry != 'idstr':
