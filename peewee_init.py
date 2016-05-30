@@ -59,3 +59,5 @@ if __name__ == '__main__':
     db.connect()
     Entry.create_table()
     EntryIndex.create_table()
+    Entry.create(title='dummy',author='dummy',uniquestr='dummy',idstr='dummy')
+    EntryIndex.create(content='dummy')
