@@ -18,6 +18,7 @@ from bib2dict import *
 from dict2sql import *
 if os.getenv('OPENSHIFT_DATA_DIR'):
     render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates')
+    web.config.debug = True
 else:
     render = web.template.render('./templates')
     web.config.debug = True
