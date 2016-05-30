@@ -1,4 +1,3 @@
-from pyparsing import Literal,Word,nestedExpr,alphas
 from sys import argv
 import bibtexparser
 

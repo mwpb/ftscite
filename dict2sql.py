@@ -1,5 +1,4 @@
 from peewee_init import *
-# a useless comment
 
 def extract_entry(entry):
     entry['idstr'] = str(entry['year'])+''.join(x for x in entry['author'] if x.isalnum())
