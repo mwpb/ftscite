@@ -56,10 +56,9 @@ def search(phrase):
     return search_results
 
 def prep_phrase(phrase):
-    phrase = phrase.replace(' ','* AND *')
+    phrase = phrase.replace(' ','* *')
     phrase = '*'+phrase+'*'
     return phrase
-
 
 def search_unknown(tex_path,bib_path):
     search_results = []

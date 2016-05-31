@@ -43,6 +43,7 @@ class index:
             form.fill({'phrase':search_term})
             #search_term = search_term.replace(' ','* AND *')
             #search_term = '*'+search_term+'*'
+            print prep_phrase(search_term)
             search_results = search(prep_phrase(search_term))
         except:
             pass
