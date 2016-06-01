@@ -1,8 +1,13 @@
 from peewee_init import *
 
 def extract_entry(entry):
-    entry['idstr'] = str(entry['year'])+''.join(x for x in entry['author'] if x.isalnum())
-    entry['uniquestr'] = str(entry['year'])+''.join(x for x in entry['author'] if x.isalnum())+''.join(x for x in entry['title'] if x.isalnum())
+    author = ''
+    try:
+        author = ''.join(x for x in entry['author'] if x.isalnum())
+    except:
+        pass
+    entry['idstr'] = str(entry['year'])+author
+    entry['uniquestr'] = str(entry['year'])+author+''.join(x for x in entry['title'] if x.isalnum())
     entry['uniquestr'] = entry['uniquestr'].lower()
     print entry['uniquestr']
     try:
@@ -22,7 +27,9 @@ def extract_entries(bibdict):
     idstrs_added = []
     duplicate_count = 0
     for entry in bibdict:
-        if extract_entry(entry):
+        if type(entry) != dict:
+            print error
+        elif extract_entry(entry):
             idstrs_added.append(entry['uniquestr'])
         else:
             duplicate_count = duplicate_count +1
