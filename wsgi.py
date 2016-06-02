@@ -31,7 +31,7 @@ urls = (
 
 search_form = form.Form(
         form.Textbox('phrase',description='Search term:',autofocus='autofocus'),
-        form.Button('Search',value=True)
+        form.Button('Search',style='visibility:hidden;',value=True)
         )
 
 class index:

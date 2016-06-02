@@ -2,19 +2,25 @@ $def with (form,results_str)
 <!DOCTYPE html>
 <html lang='en-GB'>
 <head>
+    <link rel="stylesheet" type='text/css' href="/static/skeleton.css" />
     <meta charset='utf-8'>
+    <div class='container'>
     <title>FTSCite: Full Text BibTeX Search</title>
 </head>
 <body>
-    <h1>Welcome to the Full Text BibTeX Search Server</h1>
-    <ul>
-        <li><a href='/upload'>Upload BibTeX File</a></li>
-        <li>API Documentation</li>
-    </ul>
+<div class="row">
+    <div class="three columns">
+        <ul>
+            <h1>FTSCite</h1>
+            <li><a href='/upload'>Upload BibTeX File</a></li>
+            <li>API Documentation</li>
+        </ul>
+    </div>
+    <div class="nine columns">
     <form>
-        $:form.render()
+        $:form.phrase.render()
     </form>
-    <h2>Search Results:</h2>
     <pre>$results_str</pre>
+    </div>
 </body>
 </html>
