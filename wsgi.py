@@ -79,7 +79,7 @@ if os.getenv('OPENSHIFT_DATA_DIR'):
         app = web.application(urls,globals())
         app.run()
         from wsgiref.simple_server import make_server
-        httpd = make_server('localhost', 8080, application)
+        httpd = make_server('localhost', 8080, app)
         # Wait for a single request, serve it and quit.
         httpd.handle_request()
         # app = web.application(urls, globals())
