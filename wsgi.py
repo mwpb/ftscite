@@ -30,8 +30,8 @@ urls = (
 )
 
 search_form = form.Form(
-        form.Textbox('phrase',description='Search term:',autofocus='autofocus'),
-        form.Button('Search',style='visibility:hidden;',value=True)
+        form.Textbox('phrase',description='Search term:',value='Search'),
+        form.Button('search',value=True)
         )
 
 class index:
@@ -43,12 +43,12 @@ class index:
             form.fill({'phrase':search_term})
             #search_term = search_term.replace(' ','* AND *')
             #search_term = '*'+search_term+'*'
-            print prep_phrase(search_term)
             search_results = search(prep_phrase(search_term))
         except:
             pass
         results_str = ''
         for result in search_results:
+            print result
             results_str = results_str +dict2bibstr(result)+'\n\n'
         return render.index(form,results_str)
 
