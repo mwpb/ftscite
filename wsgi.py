@@ -16,11 +16,12 @@ import json
 from parsing_utils import *
 from bib2dict import *
 from dict2sql import *
+
 if os.getenv('OPENSHIFT_DATA_DIR'):
-    render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates')
-    web.config.debug = True
+    render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates',base='layout')
+    web.config.debug = False
 else:
-    render = web.template.render('./templates')
+    render = web.template.render('./templates',base='layout')
     web.config.debug = True
 
 urls = (
@@ -30,13 +31,14 @@ urls = (
 )
 
 search_form = form.Form(
-        form.Textbox('phrase',description='Search term:',value='Search'),
+        form.Textbox('phrase',description='Search term:'),
         form.Button('search',value=True)
         )
 
 class index:
     def GET(self):
         search_results = []
+        search_term = ''
         form = search_form()
         try:
             search_term = web.input().phrase

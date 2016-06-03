@@ -1,28 +1,18 @@
 $def with (idstrs_added,duplicate_count)
-<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-    <meta charset="utf-8">
-    <title>Upload BibTeX File</title>
-</head>
-<body>
-    <h1>Upload BibTeX File</h1>
-    <ul>
-        <li><a href='/'>Search Database</a></li>
-        <li>API Documentation</li>
-    </ul>
-    <form method="POST" enctype="multipart/form-data" action="">
-        <input type="file" name="myfile" />
-        <input type="submit" />
-    </form>
-    <h2>Entries Added</h2>
-    $if idstrs_added == []:
-        No entries added.
-    <ul>
-    $for idstr in idstrs_added:
-        <li>$idstr</li>
-    </ul>
-    <h2>Duplicates Found</h2> 
-    Duplicate count = $duplicate_count
-</body>
-</html>
+$var title: Upload BibTeX File
+<form method="POST" enctype="multipart/form-data" action="">
+    <label class='file'>
+    <input type="file" id='file' name="myfile" />
+    <span class='file-custom'></span>
+    </label>
+    <input type="submit" />
+</form>
+<h2>Entries Added</h2>
+$if idstrs_added == []:
+    No entries added.
+<ul>
+$for idstr in idstrs_added:
+    <li>$idstr</li>
+</ul>
+<h2>Duplicates Found</h2> 
+Duplicate count = $duplicate_count
