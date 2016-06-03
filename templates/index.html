@@ -2,25 +2,20 @@ $def with (form,results_str)
 <!DOCTYPE html>
 <html lang='en-GB'>
 <head>
-    <link rel="stylesheet" type='text/css' href="/static/bootstrap/dist/css/bootstrap.min.css" />
     <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" type='text/css' href="/static/bootstrap/dist/css/bootstrap.min.css" />
     <title>FTSCite: Full Text BibTeX Search</title>
 </head>
 <body>
-    <div class='container'>
-    <header class='navbar'>
-        <section class='navbar-section'>
             <a href="#" class="navbar-brand">FTSCite</a>
             <a href='/upload' class="btn btn-link">Upload BibTeX File</a>
             <a href='/docs' class="btn btn-link">API Documentation</a>
-        </section>
-        <section class='navbar-section'>
             <form>
                 $:form.phrase.render()
             </form>
-        </section>
-    </header>
-    </div><!-- container -->
     <pre>$results_str</pre>
 </body>
 </html>
