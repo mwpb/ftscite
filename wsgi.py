@@ -74,10 +74,10 @@ class upload:
         return render.upload(idstrs_added,duplicate_count)
 
 if os.getenv('OPENSHIFT_DATA_DIR'):
-    app = web.application(urls, globals()).wsgifunc()
+    application = web.application(urls, globals()).wsgifunc()
     if __name__ == '__main__':
         from wsgiref.simple_server import make_server
-        httpd = make_server('localhost', 8080, app)
+        httpd = make_server('localhost', 8080, application)
         # Wait for a single request, serve it and quit.
         httpd.handle_request()
         # app = web.application(urls, globals())
