@@ -5,7 +5,9 @@ def get_entry_by_id(entry_id):
     return entry._data
 
 def delete_entry_by_id(entry_id):
-    pass
+    entry = Entry.get(Entry.id == entry_id)
+    entry.delete_instance()
+    return True
 
 if __name__ == '__main__':
     print get_entry_by_id(72)

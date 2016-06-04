@@ -29,8 +29,7 @@ urls = (
         '/', 'index',
         '/cite/(.*)', 'cite',
         '/upload', 'upload',
-        '/delete/(.*)/', 'delete',
-        '/delete/(.*)/yes', 'delete_yes'
+        '/delete/(.*)/', 'delete'
 )
 
 search_form = form.Form(
@@ -78,14 +77,16 @@ class upload:
 
 class delete:
     def GET(self,entry_id):
-        entry = get_entry_by_id(entry_id)
-        bibstr = dict2bibstr(entry)
+        try:
+            entry = get_entry_by_id(entry_id)
+            bibstr = dict2bibstr(entry)
+        except:
+            bibstr = 'No entry.'
         return render.delete(entry_id,bibstr)
-
-class delete_yes:
-    def GET(self,entry_id):
+    def POST(self,entry_id):
         delete_entry_by_id(entry_id)
-        return render.delete_yes(entry_id)
+        bibstr = ''
+        return render.delete(entry_id,bibstr)
 
 if os.getenv('OPENSHIFT_DATA_DIR'):
     application = web.application(urls, globals()).wsgifunc()

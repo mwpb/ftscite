@@ -1,9 +1,18 @@
 $def with (entry_id,bibstr)
 $var title:Delete entry?
-<h1>Delete entry</h1>
-<div class='list-group-item'>
-    <legend class='the-legend'>Are you sure you want to delete entry with id = $entry_id ?</legend>
-    <pre>$bibstr</pre>
-    <a class='btn btn-danger' href='/delete/$entry_id/yes'>Yes, please delete this entry.</a>
-    <a class='btn btn-default' href='/'>No, take me back to search.</a>
-</div>
+$if bibstr == 'No entry.':
+    <p>There is no entry to delete.</p>
+    <a class='btn btn-default' href='/'>Back to search.</a>
+$elif bibstr == '':
+    Successfully deleted entry with id $entry_id.
+    <a class='btn btn-default' href='/'>Back to search.</a>
+$else:
+    <h1>Delete entry</h1>
+    <div class='list-group-item'>
+        <legend class='the-legend'>Are you sure you want to delete entry with id = $entry_id ?</legend>
+        <pre>$bibstr</pre>
+        <form action="" method="post">
+            <input class='btn btn-danger' type='submit' name='delete' value='Delete Entry'/>
+        </form>
+        <a class='btn btn-default' href='/'>No, take me back to search.</a>
+    </div>
