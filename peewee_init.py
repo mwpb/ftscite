@@ -7,7 +7,7 @@ import errno
 if os.getenv('OPENSHIFT_DATA_DIR'):
     dbFolder = os.environ.get('OPENSHIFT_DATA_DIR')
 else:
-    dbFolder = './database/'
+    dbFolder = os.path.dirname(os.path.realpath(__file__))+'/database/'
 
 try: 
     os.makedirs(dbFolder)

@@ -1,8 +1,7 @@
 from parsing_utils import *
 from termcolor import colored
+from sql_query import *
 from online_search import *
-
-script, tex_path, bib_path = argv
 
 def print_search_results(phrase,is_offline):
     if is_offline == True:
@@ -32,14 +31,28 @@ def query_database(phrase,is_offline):
     else:
         return search_results[int(choice)]
 
-diff = unknown_entries(tex_path,bib_path)
-if diff != []:
-    for entry in diff:
-        if entry != '':
-            chosen_entry = query_database(entry,True)
-            update_tex(tex_path,entry,chosen_entry['idstr'])
-            if chosen_entry['idstr'] not in bib_entries(bib_path):
-                update_bib(bib_path,chosen_entry)
+def run_logic(tex_path):
+    bib_path = get_bibpath(tex_path)
+    try:
+        os.utime(bib_path,None)
+    except:
+        open(bib_path,'a').close()
+    if bib_path == False:
+        print 'No bibfile specified in texfile.'
+        return False
+    diff = unknown_entries(tex_path,bib_path)
+    if diff != []:
+        for entry in diff:
+            if entry != '':
+                chosen_entry = query_database(entry,True)
+                if chosen_entry != None:
+                    update_tex(tex_path,entry,chosen_entry['idstr'])
+                    if chosen_entry['idstr'] not in bib_entries(bib_path):
+                        update_bib(bib_path,chosen_entry)
+    
+        #elif search_results[int(choice)]['idstr'] not in bib_entries(bib_path):
+            #dump_entry(entry,search_results[int(choice)],bib_path,tex_path)
 
-    #elif search_results[int(choice)]['idstr'] not in bib_entries(bib_path):
-        #dump_entry(entry,search_results[int(choice)],bib_path,tex_path)
+if __name__ == '__main__':
+    script, tex_path = argv
+    run_logic(tex_path)

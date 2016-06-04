@@ -1,4 +1,5 @@
 from peewee_init import *
+import os
 import fileinput
 import re
 import sqlite3
@@ -6,6 +7,16 @@ import bibtexparser
 from sys import argv
 
 field_list = ['idstr','address','annote','author','booktitle','chapter','edition','editor','howpublished','institution','journal','month','note','number','organisation','startpage','endpage','publisher','school','series','title','ENTRYTYPE','volume','year']
+
+def get_bibpath(tex_path):
+    try:
+        tex_file = open(tex_path).read()
+        regex = r'^\\bibliography{(.+?)}'
+        bibname = re.findall(regex,tex_file,flags=re.MULTILINE)
+        bibpath = os.getcwd()+'/'+bibname[0]+'.bib'
+        return bibpath
+    except:
+        return False
 
 def tex_citations(file_path):
     tex_file = open(file_path).read()
@@ -109,11 +120,12 @@ def dump_entry(old_nick,e,bib_file,tex_file):
     return dump_str
 
 if __name__ == '__main__':
-    script, tex_path, bib_path = argv
+    script, tex_path = argv
+    print get_bibpath(tex_path)
     #print 'tex citations: ', tex_citations(tex_path)
     #print 'bib entries: ', bib_entries(bib_path)
     #print 'unknown entries', unknown_entries(tex_path,bib_path)
-    extract_entries('clean_refs.bib')
+    #extract_entries('clean_refs.bib')
     ##print 'actual entries:', extract_entries(bib_path)
     #print search('sneak')
     #diff = unknown_entries(tex_path,bib_path)

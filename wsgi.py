@@ -16,6 +16,7 @@ import json
 from parsing_utils import *
 from bib2dict import *
 from dict2sql import *
+from sql_query import *
 
 if os.getenv('OPENSHIFT_DATA_DIR'):
     render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates',base='layout')
@@ -27,7 +28,9 @@ else:
 urls = (
         '/', 'index',
         '/cite/(.*)', 'cite',
-        '/upload', 'upload'
+        '/upload', 'upload',
+        '/delete/(.*)/', 'delete',
+        '/delete/(.*)/yes', 'delete_yes'
 )
 
 search_form = form.Form(
@@ -72,6 +75,17 @@ class upload:
         idstrs_added, duplicate_count = extract_entries(bibdict)
         print '\n\nIdStr:',idstrs_added,'\n\n'
         return render.upload(idstrs_added,duplicate_count)
+
+class delete:
+    def GET(self,entry_id):
+        entry = get_entry_by_id(entry_id)
+        bibstr = dict2bibstr(entry)
+        return render.delete(entry_id,bibstr)
+
+class delete_yes:
+    def GET(self,entry_id):
+        delete_entry_by_id(entry_id)
+        return render.delete_yes(entry_id)
 
 if os.getenv('OPENSHIFT_DATA_DIR'):
     application = web.application(urls, globals()).wsgifunc()

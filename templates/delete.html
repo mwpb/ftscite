@@ -1,0 +1,9 @@
+$def with (entry_id,bibstr)
+$var title:Delete entry?
+<h1>Delete entry</h1>
+<div class='list-group-item'>
+    <legend class='the-legend'>Are you sure you want to delete entry with id = $entry_id ?</legend>
+    <pre>$bibstr</pre>
+    <a class='btn btn-danger' href='/delete/$entry_id/yes'>Yes, please delete this entry.</a>
+    <a class='btn btn-default' href='/'>No, take me back to search.</a>
+</div>
