@@ -39,20 +39,18 @@ class index:
     def GET(self):
         search_results = []
         search_term = ''
+        entry_id = 0
         form = search_form()
         try:
             search_term = web.input().phrase
             form.fill({'phrase':search_term})
-            #search_term = search_term.replace(' ','* AND *')
-            #search_term = '*'+search_term+'*'
             search_results = search(prep_phrase(search_term))
         except:
             pass
-        results_str = ''
-        for result in search_results:
-            print result
-            results_str = results_str +dict2bibstr(result)+'\n\n'
-        return render.index(form,results_str)
+        bib_results = map(dict2bibstr,search_results)
+        result_ids = map(lambda x:x['id'],search_results)
+        search_results = zip(bib_results,result_ids)
+        return render.index(form,search_results)
 
 class cite:
     def GET(self,phrase):

@@ -1,12 +1,17 @@
 $def with (idstrs_added,duplicate_count)
 $var title: Upload BibTeX File
+<div class='row'>
+<div class='well col-md-4 col-md-offset-4'>
 <form method="POST" enctype="multipart/form-data" action="">
-    <label class='file'>
-    <input type="file" id='file' name="myfile" />
-    <span class='file-custom'></span>
-    </label>
-    <input type="submit" />
+    <fieldset class='the-fieldset'>
+        <legend class='the-legend'>Choose file to upload</legend>
+        <input type="file" id='file' name="myfile" />
+        <input type="submit" value='Process File'/>
+    </fieldset>
 </form>
+</div>
+</div>
+
 <h2>Entries Added</h2>
 $if idstrs_added == []:
     No entries added.

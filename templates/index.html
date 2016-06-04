@@ -1,6 +1,13 @@
-$def with (form,results_str)
+$def with (form,search_results)
 $var title: FTSCite: Full Text BibTeX Search
 <form>
     $:form.phrase.render()
 </form>
-<pre>$results_str</pre>
+<div class='list-group'>
+$for result in search_results:
+    <div class='list-group-item'>
+        <pre>$result[0]</pre>
+    <a class='btn' href="/delete/$result[1]">Delete</a>
+    <a class='btn' href="/edit/$result[1]">Edit</a>
+    </div>
+</div>
