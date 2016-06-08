@@ -20,7 +20,7 @@ from sql_query import *
 
 if os.getenv('OPENSHIFT_DATA_DIR'):
     render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates',base='layout')
-    web.config.debug = False
+    web.config.debug = True
 else:
     render = web.template.render('./templates',base='layout')
     web.config.debug = True
