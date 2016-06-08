@@ -1,4 +1,21 @@
-$def with (entry_id)
+$def with (bibstr,entry,entry_id)
 $var title: Edit entry $entry_id
 
-Editing entry with id $entry_id.
+<h1>Editing entry with id $entry_id.</h1>
+
+<pre>$bibstr</pre>
+
+<form method='POST' enctype="multipart/form-data" action="">
+    <fieldset class='form-group'>
+
+<table>
+$for key in entry.keys():
+    $if key == 'year' or key == 'number' or key == 'startpage' or key == 'endpage' or key == 'volume' or key == 'id': 
+        <tr><td>$key</td><td><input class='form-control' type='number' name=$key value='$entry[key]'></input></td></tr>
+    $else:
+        <tr><td>$key</td><td><input class='form-control' type='text' name=$key value='$entry[key]'></input></td></tr>
+</table>
+    <button type='submit' class='btn btn-primary' value='Update record'>Update Record</button>
+    <a class='btn btn-default' href='/'>Return to search</a>
+    </fieldset>
+</form>

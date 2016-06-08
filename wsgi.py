@@ -53,6 +53,7 @@ class index:
         bib_results = map(dict2bibstr,search_results)
         result_ids = map(lambda x:x['id'],search_results)
         search_results = zip(bib_results,result_ids)
+        print search_results
         return render.index(form,search_results)
 
 class cite:
@@ -91,9 +92,17 @@ class delete:
 
 class edit:
     def GET(self,entry_id):
-        return render.edit(entry_id)
+        entry = get_entry_by_id(entry_id)
+        bibstr = dict2bibstr(entry)
+        return render.edit(bibstr,entry,entry_id)
     def POST(self,entry_id):
-        return render.edit(entry_id)
+        new_dict = dict(web.input())
+        for key in new_dict.keys():
+            if new_dict[key] == '':
+                new_dict[key] = None
+        bibstr = dict2bibstr(new_dict)
+        Entry.update(**new_dict).where(Entry.id == entry_id).execute()
+        return render.edit(bibstr,new_dict,entry_id)
 
 if os.getenv('OPENSHIFT_DATA_DIR'):
     application = web.application(urls, globals()).wsgifunc()

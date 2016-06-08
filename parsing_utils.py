@@ -6,7 +6,7 @@ import sqlite3
 import bibtexparser
 from sys import argv
 
-field_list = ['idstr','address','annote','author','booktitle','chapter','edition','editor','howpublished','institution','journal','month','note','number','organisation','startpage','endpage','publisher','school','series','title','ENTRYTYPE','volume','year']
+field_list = ['idstr','address','annote','author','booktitle','chapter','edition','editor','howpublished','institution','journal','month','note','number','organisation','pages','publisher','school','series','title','ENTRYTYPE','volume','year']
 
 def get_bibpath(tex_path):
     try:
@@ -121,7 +121,7 @@ def dump_entry(old_nick,e,bib_file,tex_file):
 
 if __name__ == '__main__':
     script, tex_path = argv
-    print get_bibpath(tex_path)
+    #print get_bibpath(tex_path)
     #print 'tex citations: ', tex_citations(tex_path)
     #print 'bib entries: ', bib_entries(bib_path)
     #print 'unknown entries', unknown_entries(tex_path,bib_path)
