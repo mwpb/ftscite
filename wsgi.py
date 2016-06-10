@@ -45,9 +45,8 @@ else:
         app.run()
 
 global s
-app = web.application(urls, globals())
 if web.config.get('_session') is None:
-    s = web.session.Session(app,web.session.DiskStore('./sessions'),initializer=  {'count':0})
+    s = web.session.Session(app,web.session.DiskStore(os.path.dirname(os.path.realpath(__file__))+'/sessions'),initializer=  {'count':0})
     web.config._session = s
 else: 
     s = web.config._session
