@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import os
-
 if os.getenv('OPENSHIFT_DATA_DIR'):
     virtenv = os.environ['APPDIR'] + '/virtenv/'
     os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.7/site-packages')
