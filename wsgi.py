@@ -13,25 +13,52 @@ if os.getenv('OPENSHIFT_DATA_DIR'):
 import web
 from web import form
 import json
+from bcrypt_utils.bc_utils import *
 from parsing_utils import *
 from bib2dict import *
 from dict2sql import *
 from sql_query import *
-
-if os.getenv('OPENSHIFT_DATA_DIR'):
-    render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates',base='layout')
-    web.config.debug = True
-else:
-    render = web.template.render('./templates',base='layout')
-    web.config.debug = True
+import shelve
 
 urls = (
         '/', 'index',
         '/cite/(.*)', 'cite',
         '/upload', 'upload',
         '/delete/(.*)/', 'delete',
-        '/edit/(.*)/', 'edit'
+        '/edit/(.*)/', 'edit',
+        '/login', 'login',
+        '/logout', 'logout'
 )
+
+app = web.application(urls,globals())
+
+if os.getenv('OPENSHIFT_DATA_DIR'):
+    application = app.wsgifunc()
+    if __name__ == '__main__':
+        from wsgiref.simple_server import make_server
+        httpd = make_server('localhost', 8080, application)
+        # Wait for a single request, serve it and quit.
+        httpd.handle_request()
+        # app = web.application(urls, globals())
+        # app.run()
+else:
+    if __name__ == '__main__':
+        app.run()
+
+global s
+app = web.application(urls, globals())
+if web.config.get('_session') is None:
+    s = web.session.Session(app,web.session.DiskStore('sessions'),initializer=  {'count':0})
+    web.config._session = s
+else: 
+    s = web.config._session
+
+if os.getenv('OPENSHIFT_DATA_DIR'):
+    render = web.template.render(os.environ['OPENSHIFT_REPO_DIR']+'/templates',base='layout')
+    web.config.debug = False
+else:
+    render = web.template.render('./templates',base='layout')
+    web.config.debug = False
 
 search_form = form.Form(
         form.Textbox('phrase',description='Search term:'),
@@ -92,10 +119,14 @@ class delete:
 
 class edit:
     def GET(self,entry_id):
+        if s._initializer['count'] == 0:
+            return web.seeother('/login')
         entry = get_entry_by_id(entry_id)
         bibstr = dict2bibstr(entry)
         return render.edit(bibstr,entry,entry_id)
     def POST(self,entry_id):
+        if s._initializer['count'] == 0:
+            return web.seeother('/login')
         new_dict = dict(web.input())
         for key in new_dict.keys():
             if new_dict[key] == '':
@@ -104,16 +135,23 @@ class edit:
         Entry.update(**new_dict).where(Entry.id == entry_id).execute()
         return render.edit(bibstr,new_dict,entry_id)
 
-if os.getenv('OPENSHIFT_DATA_DIR'):
-    application = web.application(urls, globals()).wsgifunc()
-    if __name__ == '__main__':
-        from wsgiref.simple_server import make_server
-        httpd = make_server('localhost', 8080, application)
-        # Wait for a single request, serve it and quit.
-        httpd.handle_request()
-        # app = web.application(urls, globals())
-        # app.run()
-else:
-    if __name__ == '__main__':
-        app = web.application(urls,globals())
-        app.run()
+class login:
+    def GET(self):
+        if s._initializer['count'] == 0:
+            user_logged_in = 'No user logged in.'
+        else:
+            user_logged_in = 'User '+s._initializer['count']+' logged in.'
+        return render.login(user_logged_in)
+    def POST(self):
+        username = web.input().username.encode('ascii')
+        password = web.input().password.encode('ascii')
+        if are_valid_creds(username,password):
+            s._initializer['count'] = username
+            return web.seeother('/')
+        else:
+            return render.login('failed')
+
+class logout:
+    def GET(self):
+        s._initializer['count'] = 0
+        return web.seeother('/')
