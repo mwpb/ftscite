@@ -32,7 +32,12 @@ def query_database(phrase,is_offline):
         return search_results[int(choice)]
 
 def run_logic(tex_path):
-    bib_path = get_bibpath(tex_path)
+    if get_bibpath(tex_path):
+        bib_path = get_bibpath(tex_path)
+    else:
+        print 'No bibtex file specified in tex file.'
+        return False
+    print bib_path
     try:
         os.utime(bib_path,None)
     except:

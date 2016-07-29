@@ -56,7 +56,7 @@ if os.getenv('OPENSHIFT_DATA_DIR'):
     web.config.debug = False
 else:
     render = web.template.render('./templates',base='layout')
-    web.config.debug = False
+    web.config.debug = True
 
 search_form = form.Form(
         form.Textbox('phrase',description='Search term:'),
@@ -90,9 +90,13 @@ class cite:
 
 class upload:
     def GET(self):
+        if s._initializer['count'] == 0:
+            return web.seeother('/login')
         return render.upload('',0)
 
     def POST(self):
+        if s._initializer['count'] == 0:
+            return web.seeother('/login')
         x = web.input(myfile={})
         web.debug(x['myfile'].filename) 
         bibstr = x['myfile'].value
@@ -104,6 +108,9 @@ class upload:
 
 class delete:
     def GET(self,entry_id):
+        if s._initializer['count'] == 0:
+            return web.seeother('/login')
+
         try:
             entry = get_entry_by_id(entry_id)
             bibstr = dict2bibstr(entry)
@@ -111,6 +118,9 @@ class delete:
             bibstr = 'No entry.'
         return render.delete(entry_id,bibstr)
     def POST(self,entry_id):
+        if s._initializer['count'] == 0:
+            return web.seeother('/login')
+
         delete_entry_by_id(entry_id)
         bibstr = ''
         return render.delete(entry_id,bibstr)
